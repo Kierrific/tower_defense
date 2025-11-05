@@ -43,6 +43,11 @@ public class Plot : MonoBehaviour
                 BuildManager.main.lowerUpgrades();
                 return;
             }
+            else if (BuildManager.main.getSelectedTowerIndex() == 1001)
+            {
+                Destroy(tower);
+                BuildManager.main.increaseTower();
+            }
                 return;
         }
         GameObject towerToBuild = BuildManager.main.GetSelectedTower();

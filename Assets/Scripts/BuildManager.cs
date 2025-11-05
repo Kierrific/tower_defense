@@ -12,6 +12,7 @@ public class BuildManager : MonoBehaviour
     private int selectedTower = 0;
     private int placeableTowers = 2;
     private int usableUpgrades = 0;
+    private int tempValue = 0;
     
     public void Awake()
     {
@@ -25,6 +26,7 @@ public class BuildManager : MonoBehaviour
 
     public void selectReward(int rewardNum)
     {
+        main.tempValue = main.selectedTower;
         main.selectedTower = rewardNum;
         if (rewardNum == 2 || rewardNum == 3)
         {
@@ -58,5 +60,17 @@ public class BuildManager : MonoBehaviour
     public void lowerUpgrades()
     {
         main.usableUpgrades--;
+    }
+
+    public void destroySelect()
+    {
+        if (selectedTower != 1001)
+        {
+            main.selectReward(1001);
+        }
+        else
+        {
+            main.selectReward(main.tempValue);
+        }
     }
 }

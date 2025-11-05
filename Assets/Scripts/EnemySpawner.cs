@@ -71,12 +71,20 @@ public class EnemySpawner : MonoBehaviour
     {
         main.isSpawning = false;
         LevelManager.main.gameObject.GetComponent<ItemGrabber>().Trigger();
+        for (int i = 0; i < enemyPrefabs.Length; i++)
+        {
+            enemyPrefabs[i].gameObject.GetComponent<Health>().updateHealth();
+        }
     }
 
     private void SpawnEnemy()
     {
         GameObject prefabToSpawn = main.enemyPrefabs[0];
         Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+        if (currentWave % 2 == 0 && currentWave > 2)
+        {
+            prefabToSpawn.GetComponent<Health>().calcHealth(1);
+        }
     }
 
     private int EnemiesPerWave()

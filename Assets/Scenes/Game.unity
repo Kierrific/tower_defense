@@ -12816,6 +12816,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4691050374978772629, guid: e73dda6fbdf4e1e45b4aa1f2bcbcc211, type: 3}
   m_PrefabInstance: {fileID: 927046511}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &932976671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 413896098266127498, guid: e59861c1ebeea1c4cae8ed8a3ebc6f35, type: 3}
+  m_PrefabInstance: {fileID: 4400477331928069479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45be33227a3e5646a4bd82f595ba88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &933440807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13861,8 +13872,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 66
+  m_fontSizeBase: 66
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14160,8 +14171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 809.39, y: -511.69}
-  m_SizeDelta: {x: 301.223, y: 56.479}
+  m_AnchoredPosition: {x: 731.115, y: -497.014}
+  m_SizeDelta: {x: 457.772, y: 85.832}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1042171938
 MonoBehaviour:
@@ -14206,7 +14217,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1042171939}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 932976671}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+        m_MethodName: destroySelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1042171939
 MonoBehaviour:
   m_ObjectHideFlags: 0
