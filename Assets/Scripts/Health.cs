@@ -1,9 +1,13 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class Health : MonoBehaviour
 {
+    [Header("Reference")]
+    [SerializeField] private GameObject particle;
+
     [Header("Attribute")]
     [SerializeField] private int hitPoints = 2;
 
@@ -17,6 +21,7 @@ public class Health : MonoBehaviour
 
         if (hitPoints <= 0 && !isDestroyed)
         {
+            GameObject particleEffect = Instantiate(particle, transform.position, Quaternion.identity);
             EnemySpawner.onEnemyDestroy.Invoke();
             isDestroyed = true;
             Destroy(gameObject);
@@ -32,4 +37,5 @@ public class Health : MonoBehaviour
     {
         holdHP = hitPoints;
     }
+
 }

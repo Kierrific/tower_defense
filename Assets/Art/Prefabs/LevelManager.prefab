@@ -81,6 +81,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1224698147363467012, guid: 1ca5e87510605b543bc3e1d72f8bcf9b, type: 3}
   levelManager: {fileID: 3193706773240154149}
+  particle: {fileID: 7747229109823888426, guid: 58cee49ccc4d65648abca0fadc7cf383, type: 3}
   baseEnemies: 8
   enemiesPerSecond: 2
   timeBetweenWaves: 5

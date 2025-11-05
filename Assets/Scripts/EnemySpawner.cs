@@ -23,16 +23,12 @@ public class EnemySpawner : MonoBehaviour
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
+    private GameObject newEnemy;
 
     private void Awake()
     {
         main = this;
         onEnemyDestroy.AddListener(EnemyDestroyed);
-    }
-
-    private void Start()
-    {
-        StartCoroutine(StartWave());
     }
 
     private void Update()
@@ -60,11 +56,14 @@ public class EnemySpawner : MonoBehaviour
         main.enemiesAlive--;
     }
 
-    private IEnumerator StartWave()
+    public void StartWave()
     {
-        yield return new WaitForSeconds(main.timeBetweenWaves);
-        main.isSpawning = true;
-        main.enemiesLeftToSpawn = main.EnemiesPerWave();
+        if (!isSpawning)
+        {
+            main.isSpawning = true;
+            main.enemiesLeftToSpawn = main.EnemiesPerWave();
+        }
+        
     }
 
     private void EndWave()
@@ -80,10 +79,10 @@ public class EnemySpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         GameObject prefabToSpawn = main.enemyPrefabs[0];
-        Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+        newEnemy = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
         if (currentWave % 2 == 0 && currentWave > 2)
         {
-            prefabToSpawn.GetComponent<Health>().calcHealth(1);
+            newEnemy.GetComponent<Health>().calcHealth(1);
         }
     }
 
@@ -97,7 +96,6 @@ public class EnemySpawner : MonoBehaviour
         LevelManager.main.gameObject.GetComponent<ItemGrabber>().itemGrabbed();
         main.timeSinceLastSpawn = 0f;
         main.currentWave++;
-        main.StartCoroutine(main.StartWave());
     }
     
 }

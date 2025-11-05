@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public static EnemyMovement main;
+
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
     [Header("Attributes")]
