@@ -120,6 +120,8 @@ MonoBehaviour:
   - {fileID: 3456540685850026488, guid: fef75eec6bc997141916f5f1264e83ca, type: 3}
   towerCountPrefab: {fileID: 5321824795234341263, guid: 96aeb42692cad0249b789bec687e2f38, type: 3}
   upgradeCountPrefab: {fileID: 4869473460976912890, guid: c842d4a4763d5c84ca90201f4d2ce056, type: 3}
+  tempValue: 0
+  towerList: []
 --- !u!114 &716667523348828438
 MonoBehaviour:
   m_ObjectHideFlags: 0

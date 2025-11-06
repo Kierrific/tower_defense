@@ -56,6 +56,7 @@ MonoBehaviour:
   rotationSpeed: 500
   bps: 3
   damageMultiplier: 1
+  identifier: 1
 --- !u!1 &4300032157145380762
 GameObject:
   m_ObjectHideFlags: 0

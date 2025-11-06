@@ -14,8 +14,15 @@ public class BuildManager : MonoBehaviour
     private int selectedTower = 0;
     private int placeableTowers = 2;
     private int usableUpgrades = 0;
-    private int tempValue = 0;
-    
+    public int tempValue = 0;
+    public List<GameObject> towerList = new();
+
+    public void Start()
+    {
+        towerList.Add(towerPrefabs[selectedTower]);
+        towerList.Add(towerPrefabs[selectedTower]);
+    }
+
     public void Awake()
     {
         main = this;
@@ -28,7 +35,6 @@ public class BuildManager : MonoBehaviour
 
     public void selectReward(int rewardNum)
     {
-        main.tempValue = main.selectedTower;
         main.selectedTower = rewardNum;
         if (rewardNum == 2 || rewardNum == 3)
         {
@@ -45,12 +51,15 @@ public class BuildManager : MonoBehaviour
     public void lowerTower()
     {
         main.placeableTowers--;
+        main.towerList.Remove(main.towerList[^1]);
         towerCountPrefab.GetComponent<Text_Updates>().updateText();
     }
 
     public void increaseTower()
     {
         main.placeableTowers++;
+        Debug.Log(main.selectedTower.ToString());
+        main.towerList.Add(main.towerPrefabs[main.selectedTower]);
         towerCountPrefab.GetComponent<Text_Updates>().updateText();
     }
 
@@ -78,6 +87,16 @@ public class BuildManager : MonoBehaviour
         {
             main.selectReward(main.tempValue);
         }
+    }
+
+    public List<GameObject> getTowerList()
+    {
+        return towerList;
+    }
+
+    public void setSelectedTower(int num)
+    {
+        selectedTower = num;
     }
 
     

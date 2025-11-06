@@ -19,6 +19,7 @@ public class Turret : MonoBehaviour
 
     private Transform target;
     private float timeUntilFire;
+    public int identifier;
 
     private void Update()
     {
@@ -77,13 +78,6 @@ public class Turret : MonoBehaviour
         turretRotationPoint.rotation = Quaternion.RotateTowards(turretRotationPoint.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
-    //allows viewing of the range in the editor.
-    private void OnDrawGizmosSelected()
-    {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
-    }
-
     public void addMultiplier(int mult)
     {
         damageMultiplier = damageMultiplier * mult;
@@ -94,4 +88,8 @@ public class Turret : MonoBehaviour
         bps += addition;
     }
 
+    public int getIdentifier()
+    {
+        return identifier;
+    }
 }

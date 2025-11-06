@@ -45,12 +45,13 @@ public class Plot : MonoBehaviour
             }
             else if (BuildManager.main.getSelectedTowerIndex() == 1001)
             {
+                BuildManager.main.setSelectedTower(tower.GetComponent<Turret>().getIdentifier());
                 Destroy(tower);
                 BuildManager.main.increaseTower();
             }
                 return;
         }
-        GameObject towerToBuild = BuildManager.main.GetSelectedTower();
+        GameObject towerToBuild = BuildManager.main.getTowerList()[^1];
         BuildManager.main.lowerTower();
         tower = Instantiate(towerToBuild, transform.position, Quaternion.identity);
     }
