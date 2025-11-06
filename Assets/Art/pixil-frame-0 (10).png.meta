@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aafe8c512ea029d4c89acd5776d8d0ec
+guid: 9f3ef5d6517893346aec1f047c2aa152
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4935361064058716367
-    second: start_wave_button_0
+      213: 8785034863198750711
+    second: pixil-frame-0 (10)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: start_wave_button_0
+      name: pixil-frame-0 (10)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 85
-        height: 85
+        width: 200
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc083853dbced7440800000000000000
-      internalID: 4935361064058716367
+      spriteID: 7f74268b9a6bae970800000000000000
+      internalID: 8785034863198750711
       vertices: []
       indices: 
       edges: []
@@ -160,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      start_wave_button_0: 4935361064058716367
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

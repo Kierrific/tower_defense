@@ -40,7 +40,7 @@ public class ItemGrabber : MonoBehaviour
         itemIndex = 0;
         for (int i = 1; i < itemPrefabs.Length; i++)
         {
-            //I hope I'm doing this right
+            
             if (itemPrefabs[itemIndex].gameObject.GetComponent<Item>().getChance() > itemPrefabs[i].gameObject.GetComponent<Item>().getChance() && randomNumber <= itemPrefabs[i].gameObject.GetComponent<Item>().getChance())
             {
                 itemIndex = i;
@@ -57,7 +57,7 @@ public class ItemGrabber : MonoBehaviour
         itemIndex = 0;
         for (int i = 1; i < itemPrefabs.Length; i++)
         {
-            //I hope I'm doing this right
+            
             if (itemPrefabs[itemIndex].gameObject.GetComponent<Item>().getChance() > itemPrefabs[i].gameObject.GetComponent<Item>().getChance() && randomNumber <= itemPrefabs[i].gameObject.GetComponent<Item>().getChance())
             {
                 itemIndex = i;

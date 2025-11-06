@@ -8,6 +8,8 @@ public class BuildManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private GameObject[] towerPrefabs;
+    [SerializeField] private GameObject towerCountPrefab;
+    [SerializeField] private GameObject upgradeCountPrefab;
 
     private int selectedTower = 0;
     private int placeableTowers = 2;
@@ -31,6 +33,7 @@ public class BuildManager : MonoBehaviour
         if (rewardNum == 2 || rewardNum == 3)
         {
             main.usableUpgrades++;
+            upgradeCountPrefab.GetComponent<Upgrade_Updates>().updateText();
         }
     }
 
@@ -42,11 +45,13 @@ public class BuildManager : MonoBehaviour
     public void lowerTower()
     {
         main.placeableTowers--;
+        towerCountPrefab.GetComponent<Text_Updates>().updateText();
     }
 
     public void increaseTower()
     {
         main.placeableTowers++;
+        towerCountPrefab.GetComponent<Text_Updates>().updateText();
     }
 
     public int getSelectedTowerIndex()
@@ -60,6 +65,7 @@ public class BuildManager : MonoBehaviour
     public void lowerUpgrades()
     {
         main.usableUpgrades--;
+        upgradeCountPrefab.GetComponent<Upgrade_Updates>().updateText();
     }
 
     public void destroySelect()
@@ -73,4 +79,6 @@ public class BuildManager : MonoBehaviour
             main.selectReward(main.tempValue);
         }
     }
+
+    
 }

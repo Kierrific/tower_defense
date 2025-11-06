@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3631737481834421345}
+  levelManager: {fileID: 3193706773240154149, guid: e59861c1ebeea1c4cae8ed8a3ebc6f35, type: 3}
   moveSpeed: 5
 --- !u!50 &3631737481834421345
 Rigidbody2D:

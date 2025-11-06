@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7696942599951130309}
   - component: {fileID: 7523458441353493812}
   - component: {fileID: 413896098266127498}
+  - component: {fileID: 716667523348828438}
   m_Layer: 0
   m_Name: LevelManager
-  m_TagString: Untagged
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,10 +82,8 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1224698147363467012, guid: 1ca5e87510605b543bc3e1d72f8bcf9b, type: 3}
   levelManager: {fileID: 3193706773240154149}
-  particle: {fileID: 7747229109823888426, guid: 58cee49ccc4d65648abca0fadc7cf383, type: 3}
   baseEnemies: 8
   enemiesPerSecond: 2
-  timeBetweenWaves: 5
   difficultyScalingFactor: 0.5
 --- !u!114 &7523458441353493812
 MonoBehaviour:
@@ -119,3 +118,21 @@ MonoBehaviour:
   towerPrefabs:
   - {fileID: 4191828458962140066, guid: 0707779b4dc515f44a6f145c0d6c3010, type: 3}
   - {fileID: 3456540685850026488, guid: fef75eec6bc997141916f5f1264e83ca, type: 3}
+  towerCountPrefab: {fileID: 5321824795234341263, guid: 96aeb42692cad0249b789bec687e2f38, type: 3}
+  upgradeCountPrefab: {fileID: 4869473460976912890, guid: c842d4a4763d5c84ca90201f4d2ce056, type: 3}
+--- !u!114 &716667523348828438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3193706773240154149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422d0c8c96578e04ca744603cab6d0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 1224698147363467012, guid: 1ca5e87510605b543bc3e1d72f8bcf9b, type: 3}
+  health_counter_prefab: {fileID: 1357037158401120067, guid: 626fd468a8437034b9e03ed0dbb9288c, type: 3}
+  health: 20

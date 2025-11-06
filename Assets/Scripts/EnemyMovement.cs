@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private GameObject levelManager;
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2f;
 
@@ -26,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
 
             if (pathIndex >= LevelManager.main.path.Length)
             {
+                levelManager.GetComponent<Player_Health>().takeDamage();
                 EnemySpawner.onEnemyDestroy.Invoke();
                 Destroy(gameObject);
                 return;

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Canvas
   - Upgrades
+  - LevelManager
   layers:
   - Default
   - TransparentFX
