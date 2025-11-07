@@ -29,31 +29,39 @@ public class Plot : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (tower != null || BuildManager.main.getPlaceableTowers() == 0)
+        if (!EnemySpawner.main.checkItemsSpawned())
         {
-            if (BuildManager.main.getSelectedTowerIndex() == 2 && BuildManager.main.getUsableUpgrades() > 0)
+            if (tower != null || BuildManager.main.getPlaceableTowers() == 0)
             {
-                tower.GetComponent<Turret>().addMultiplier(2);
-                BuildManager.main.lowerUpgrades();
+                if (BuildManager.main.getSelectedTowerIndex() == 2 && BuildManager.main.getUsableUpgrades() > 0)
+                {
+                    tower.GetComponent<Turret>().addMultiplier(2);
+                    BuildManager.main.lowerUpgrades();
+                    return;
+                }
+                else if (BuildManager.main.getSelectedTowerIndex() == 3 && BuildManager.main.getUsableUpgrades() > 0)
+                {
+                    tower.GetComponent<Turret>().addBPS(1);
+                    BuildManager.main.lowerUpgrades();
+                    return;
+                }
+                else if (BuildManager.main.getSelectedTowerIndex() == 1001)
+                {
+                    BuildManager.main.setSelectedTower(tower.GetComponent<Turret>().getIdentifier());
+                    Destroy(tower);
+                    BuildManager.main.increaseTower();
+                    BuildManager.main.setSelectedTower(1001);
+                }
                 return;
             }
-            else if (BuildManager.main.getSelectedTowerIndex() == 3 && BuildManager.main.getUsableUpgrades() > 0)
+            if (BuildManager.main.getSelectedTowerIndex() != 1001)
             {
-                tower.GetComponent<Turret>().addBPS(1);
-                BuildManager.main.lowerUpgrades();
-                return;
+                GameObject towerToBuild = BuildManager.main.getTowerList()[^1];
+                BuildManager.main.lowerTower();
+                tower = Instantiate(towerToBuild, transform.position, Quaternion.identity);
             }
-            else if (BuildManager.main.getSelectedTowerIndex() == 1001)
-            {
-                BuildManager.main.setSelectedTower(tower.GetComponent<Turret>().getIdentifier());
-                Destroy(tower);
-                BuildManager.main.increaseTower();
-                BuildManager.main.setSelectedTower(1001);
-            }
-                return;
+            
         }
-        GameObject towerToBuild = BuildManager.main.getTowerList()[^1];
-        BuildManager.main.lowerTower();
-        tower = Instantiate(towerToBuild, transform.position, Quaternion.identity);
+        
     }
 }

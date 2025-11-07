@@ -22,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
     private bool isSpawning = false;
+    private bool itemsSpawned = false;
     private GameObject newEnemy;
 
     private void Awake()
@@ -57,7 +58,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void StartWave()
     {
-        if (!isSpawning)
+        if (!isSpawning && !itemsSpawned)
         {
             main.isSpawning = true;
             main.enemiesLeftToSpawn = main.EnemiesPerWave();
@@ -68,6 +69,7 @@ public class EnemySpawner : MonoBehaviour
     private void EndWave()
     {
         main.isSpawning = false;
+        main.itemsSpawned = true;
         LevelManager.main.gameObject.GetComponent<ItemGrabber>().Trigger();
         for (int i = 0; i < enemyPrefabs.Length; i++)
         {
@@ -93,8 +95,14 @@ public class EnemySpawner : MonoBehaviour
     public void grabItem()
     {
         LevelManager.main.gameObject.GetComponent<ItemGrabber>().itemGrabbed();
+        main.itemsSpawned = false;
         main.timeSinceLastSpawn = 0f;
         main.currentWave++;
+    }
+
+    public bool checkItemsSpawned()
+    {
+        return main.itemsSpawned;
     }
     
 }

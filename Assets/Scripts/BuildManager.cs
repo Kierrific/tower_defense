@@ -8,14 +8,17 @@ public class BuildManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private GameObject[] towerPrefabs;
+    [SerializeField] private GameObject[] upgradePrefabs;
     [SerializeField] private GameObject towerCountPrefab;
     [SerializeField] private GameObject upgradeCountPrefab;
+    [SerializeField] private GameObject deletionTrackerPrefab;
 
     private int selectedTower = 0;
     private int placeableTowers = 2;
     private int usableUpgrades = 0;
     public int tempValue = 0;
     public List<GameObject> towerList = new();
+    public List<GameObject> upgradeList = new();
 
     public void Start()
     {
@@ -78,14 +81,21 @@ public class BuildManager : MonoBehaviour
 
     public void destroySelect()
     {
-        if (selectedTower != 1001)
+        if (!EnemySpawner.main.checkItemsSpawned())
         {
-            main.selectReward(1001);
+            if (selectedTower != 1001)
+            {
+                main.selectReward(1001);
+                deletionTrackerPrefab.GetComponent<Delete_Text_Update>().updateText();
+
+            }
+            else
+            {
+                main.selectReward(main.tempValue);
+                deletionTrackerPrefab.GetComponent<Delete_Text_Update>().updateText();
+            }
         }
-        else
-        {
-            main.selectReward(main.tempValue);
-        }
+        
     }
 
     public List<GameObject> getTowerList()
