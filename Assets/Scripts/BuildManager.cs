@@ -58,7 +58,6 @@ public class BuildManager : MonoBehaviour
     public void increaseTower()
     {
         main.placeableTowers++;
-        Debug.Log(main.selectedTower.ToString());
         main.towerList.Add(main.towerPrefabs[main.selectedTower]);
         towerCountPrefab.GetComponent<Text_Updates>().updateText();
     }

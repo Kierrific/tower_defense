@@ -48,6 +48,7 @@ public class Plot : MonoBehaviour
                 BuildManager.main.setSelectedTower(tower.GetComponent<Turret>().getIdentifier());
                 Destroy(tower);
                 BuildManager.main.increaseTower();
+                BuildManager.main.setSelectedTower(1001);
             }
                 return;
         }
