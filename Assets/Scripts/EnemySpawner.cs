@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
     private bool isSpawning = false;
     private bool itemsSpawned = false;
     private GameObject newEnemy;
+    private List<GameObject> spawnedEnemies;
 
     private void Awake()
     {
@@ -81,6 +82,7 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject prefabToSpawn = main.enemyPrefabs[0];
         newEnemy = Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
+        spawnedEnemies.Add(newEnemy);
         if (currentWave % 2 == 0 && currentWave > 2)
         {
             newEnemy.GetComponent<Health>().calcHealth(1);
