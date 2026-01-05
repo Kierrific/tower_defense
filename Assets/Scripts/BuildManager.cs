@@ -101,6 +101,7 @@ public class BuildManager : MonoBehaviour
     public List<GameObject> getTowerList()
     {
         return towerList;
+        Debug.Log("test");
     }
 
     public void setSelectedTower(int num)
