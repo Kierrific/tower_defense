@@ -57,15 +57,34 @@ public class Turret : MonoBehaviour
 
     private void FindTarget()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
+        //RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
 
-        if (hits.Length > 0)
+        //if (hits.Length > 0)
+        //{
+        //    target = hits[0].transform;
+        //}
+        if (EnemySpawner.main.GetEnemies().Count > 0)
         {
-            target = hits[0].transform;
+            if (CheckTargetsInRange() != -1)
+            {
+                target = EnemySpawner.main.GetEnemies()[CheckTargetsInRange()].transform;
+            }            
         }
     }
 
-    //checks to see if the closest enemy is actually in range of the turret
+    private int CheckTargetsInRange()
+    {
+        for (int i = 0; i < EnemySpawner.main.GetEnemies().Count; i++)
+        {
+            if (Vector2.Distance(EnemySpawner.main.GetEnemies()[i].transform.position, transform.position) <= targetingRange)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    //checks to see if the targetted enemy is actually in range of the turret
     private bool CheckTargetIsInRange()
     {
         return Vector2.Distance(target.position, transform.position) <= targetingRange;

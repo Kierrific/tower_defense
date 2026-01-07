@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     private bool isSpawning = false;
     private bool itemsSpawned = false;
     private GameObject newEnemy;
-    private List<GameObject> spawnedEnemies;
+    public List<GameObject> spawnedEnemies;
 
     private void Awake()
     {
@@ -48,6 +48,17 @@ public class EnemySpawner : MonoBehaviour
         if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
         {
             EndWave();
+        }
+
+        if (spawnedEnemies.Count > 0)
+        {
+            for (int i = 0; i < spawnedEnemies.Count; i++)
+            {
+                if (spawnedEnemies[i] == null)
+                {
+                    spawnedEnemies.Remove(spawnedEnemies[i]);
+                }
+            }
         }
         
     }
@@ -106,5 +117,9 @@ public class EnemySpawner : MonoBehaviour
     {
         return main.itemsSpawned;
     }
-    
+
+    public List<GameObject> GetEnemies()
+    {
+        return spawnedEnemies;
+    }
 }

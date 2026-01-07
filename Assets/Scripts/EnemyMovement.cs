@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
 
     private Transform target;
     private int pathIndex = 0;
+    private float lifetime;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
                 target = LevelManager.main.path[pathIndex];
             }
         }
+        lifetime += Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -44,5 +46,10 @@ public class EnemyMovement : MonoBehaviour
         Vector2 direction = (target.position - transform.position).normalized;
 
         rb.linearVelocity = direction * moveSpeed;
+    }
+
+    public float GetLifetime()
+    {
+        return lifetime;
     }
 }
