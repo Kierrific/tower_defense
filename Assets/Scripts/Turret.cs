@@ -16,6 +16,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private float rotationSpeed = 200f;
     [SerializeField] private float bps = 1f; // bullets per second
     [SerializeField] public float damageMultiplier = 1f;
+    [SerializeField] public float damageAddition = 0f;
 
     private Transform target;
     private float timeUntilFire;
@@ -52,7 +53,7 @@ public class Turret : MonoBehaviour
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
-        bulletObj.gameObject.GetComponent<Bullet>().damageCalc(damageMultiplier);
+        bulletObj.gameObject.GetComponent<Bullet>().damageCalc(damageMultiplier, damageAddition);
     }
 
     private void FindTarget()
@@ -100,6 +101,11 @@ public class Turret : MonoBehaviour
     public void addMultiplier(int mult)
     {
         damageMultiplier = damageMultiplier * mult;
+    }
+
+    public void addDamage(int damage)
+    {
+        damageAddition += damage;
     }
 
     public void addBPS(float addition)

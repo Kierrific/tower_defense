@@ -85,6 +85,7 @@ MonoBehaviour:
   baseEnemies: 8
   enemiesPerSecond: 2
   difficultyScalingFactor: 0.5
+  spawnedEnemies: []
 --- !u!114 &7523458441353493812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +104,7 @@ MonoBehaviour:
   - {fileID: 3908191953547160260, guid: 7c7a3b954b169b74e98ee2fe41f89647, type: 3}
   - {fileID: 8084292387641791581, guid: f84d917484b23be4ca02141cbbcff785, type: 3}
   - {fileID: 331622071102420639, guid: dc9b6f8eaedd016429ceaa40925d8079, type: 3}
+  - {fileID: 2158867850555858804, guid: b4af5e8f74b994d4fbf76e0671b9f672, type: 3}
 --- !u!114 &413896098266127498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +126,7 @@ MonoBehaviour:
   deletionTrackerPrefab: {fileID: 3516638822716023217, guid: 037a9b82ee5e07f4a93cc73f72b33bee, type: 3}
   tempValue: 0
   towerList: []
-  upgradeList: []
+  upgradeList: 
 --- !u!114 &716667523348828438
 MonoBehaviour:
   m_ObjectHideFlags: 0

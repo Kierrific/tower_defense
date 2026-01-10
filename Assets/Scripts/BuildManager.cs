@@ -18,7 +18,7 @@ public class BuildManager : MonoBehaviour
     private int usableUpgrades = 0;
     public int tempValue = 0;
     public List<GameObject> towerList = new();
-    public List<GameObject> upgradeList = new();
+    public List<int> upgradeList = new();
 
     public void Start()
     {
@@ -39,9 +39,10 @@ public class BuildManager : MonoBehaviour
     public void selectReward(int rewardNum)
     {
         main.selectedTower = rewardNum;
-        if (rewardNum == 2 || rewardNum == 3)
+        if (!(rewardNum == 0) && !(rewardNum == 1) && !(rewardNum == 1001))
         {
             main.usableUpgrades++;
+            upgradeList.Add(rewardNum);
             upgradeCountPrefab.GetComponent<Upgrade_Updates>().updateText();
         }
     }

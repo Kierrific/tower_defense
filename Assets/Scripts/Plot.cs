@@ -41,7 +41,13 @@ public class Plot : MonoBehaviour
                 }
                 else if (BuildManager.main.getSelectedTowerIndex() == 3 && BuildManager.main.getUsableUpgrades() > 0)
                 {
-                    tower.GetComponent<Turret>().addBPS(1);
+                    tower.GetComponent<Turret>().addBPS(0.1f);
+                    BuildManager.main.lowerUpgrades();
+                    return;
+                }
+                else if (BuildManager.main.getSelectedTowerIndex() == 4 && BuildManager.main.getUsableUpgrades() > 0)
+                {
+                    tower.GetComponent<Turret>().addDamage(2);
                     BuildManager.main.lowerUpgrades();
                     return;
                 }
