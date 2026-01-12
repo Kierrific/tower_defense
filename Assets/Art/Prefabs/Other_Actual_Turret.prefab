@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9097569222474257753}
   - component: {fileID: 3370495255018851026}
+  - component: {fileID: 7479155162648620726}
   m_Layer: 0
   m_Name: Other_Actual_Turret
   m_TagString: Untagged
@@ -56,7 +57,32 @@ MonoBehaviour:
   rotationSpeed: 500
   bps: 3
   damageMultiplier: 1
+  damageAddition: 0
   identifier: 1
+--- !u!114 &7479155162648620726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456540685850026488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3d0517ff88c14882172d845460991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretRotationPoint: {fileID: 1963587009176477064}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
+  bulletPrefab: {fileID: 698003111455867834, guid: 2030070aad595284a8fad7679ae4eb18, type: 3}
+  firingPoint: {fileID: 3250087700944822577}
+  targetingRange: 5
+  rotationSpeed: 200
+  bps: 1
+  damageMultiplier: 1
+  damageAddition: 0
+  identifier: 0
 --- !u!1 &4300032157145380762
 GameObject:
   m_ObjectHideFlags: 0

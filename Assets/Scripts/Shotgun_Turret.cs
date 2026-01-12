@@ -42,7 +42,10 @@ public class Shotgun_Turret : MonoBehaviour
             timeUntilFire += Time.deltaTime;
             if (timeUntilFire >= 1f / bps)
             {
-                Shoot();
+                for (int i = 0; i < bulletPrefab.GetComponent<Shotgun_Bullet>().GetPelletCount(); i++)
+                {
+                    Shoot();
+                }
                 timeUntilFire = 0f;
             }
         }
@@ -51,9 +54,9 @@ public class Shotgun_Turret : MonoBehaviour
     private void Shoot()
     {
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
-        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        Shotgun_Bullet bulletScript = bulletObj.GetComponent<Shotgun_Bullet>();
         bulletScript.SetTarget(target);
-        bulletObj.gameObject.GetComponent<Bullet>().damageCalc(damageMultiplier, damageAddition);
+        bulletObj.gameObject.GetComponent<Shotgun_Bullet>().damageCalc(damageMultiplier, damageAddition);
     }
 
     private void FindTarget()

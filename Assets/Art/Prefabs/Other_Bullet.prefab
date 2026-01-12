@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5701393021699558644}
   - component: {fileID: 8649594457787602439}
   - component: {fileID: 5179377411336388852}
+  - component: {fileID: 5756083268341657690}
   - component: {fileID: 6673259896079725886}
   m_Layer: 7
   m_Name: Other_Bullet
@@ -153,7 +154,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &6673259896079725886
+--- !u!114 &5756083268341657690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,6 +162,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698003111455867834}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071f6d291a4cabe4d9d9ae95f1aa2cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5179377411336388852}
+  turret: {fileID: 0}
+  bulletSpeed: 30
+  bulletDamage: 1
+  pelletCount: 8
+  laksdfjf: 5
+--- !u!114 &6673259896079725886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698003111455867834}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08a2e01f08ccacc41b2985fdd3c42701, type: 3}
   m_Name: 
