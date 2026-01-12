@@ -13,6 +13,7 @@ public class Shotgun_Bullet : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 20f;
     [SerializeField] private int bulletDamage = 1;
+    [SerializeField] private int pelletCount = 8;
 
     private float lifetime = 0f;
     private Vector2 direction;
