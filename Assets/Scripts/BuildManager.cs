@@ -14,16 +14,28 @@ public class BuildManager : MonoBehaviour
     [SerializeField] private GameObject deletionTrackerPrefab;
 
     private int selectedTower = 0;
-    private int placeableTowers = 2;
+    private int placeableTowers = 0;
     private int usableUpgrades = 0;
     public int tempValue = 0;
     public List<GameObject> towerList = new();
     public List<int> upgradeList = new();
+    private int bothStartingGrabbed = 0;
 
     public void Start()
     {
-        towerList.Add(towerPrefabs[selectedTower]);
-        towerList.Add(towerPrefabs[selectedTower]);
+        EnemySpawner.main.SetItemsSpawned(true);
+        LevelManager.main.gameObject.GetComponent<ItemGrabber>().StartingItems();
+        bothStartingGrabbed++;
+    }
+
+    private void Update()
+    {
+        if (!EnemySpawner.main.checkItemsSpawned() && bothStartingGrabbed < 2)
+        {
+            EnemySpawner.main.SetItemsSpawned(true);
+            LevelManager.main.gameObject.GetComponent<ItemGrabber>().StartingItems();
+            bothStartingGrabbed++;
+        }
     }
 
     public void Awake()

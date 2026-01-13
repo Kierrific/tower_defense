@@ -73,6 +73,7 @@ public class EnemySpawner : MonoBehaviour
         if (!isSpawning && !itemsSpawned)
         {
             main.isSpawning = true;
+            main.timeSinceLastSpawn = 0f;
             main.enemiesLeftToSpawn = main.EnemiesPerWave();
         }
         
@@ -82,6 +83,7 @@ public class EnemySpawner : MonoBehaviour
     {
         main.isSpawning = false;
         main.itemsSpawned = true;
+        main.currentWave++;
         LevelManager.main.gameObject.GetComponent<ItemGrabber>().Trigger();
         for (int i = 0; i < enemyPrefabs.Length; i++)
         {
@@ -109,8 +111,6 @@ public class EnemySpawner : MonoBehaviour
     {
         LevelManager.main.gameObject.GetComponent<ItemGrabber>().itemGrabbed();
         main.itemsSpawned = false;
-        main.timeSinceLastSpawn = 0f;
-        main.currentWave++;
     }
 
     public bool checkItemsSpawned()
@@ -121,5 +121,10 @@ public class EnemySpawner : MonoBehaviour
     public List<GameObject> GetEnemies()
     {
         return spawnedEnemies;
+    }
+
+    public void SetItemsSpawned(bool check)
+    {
+        itemsSpawned = check;
     }
 }

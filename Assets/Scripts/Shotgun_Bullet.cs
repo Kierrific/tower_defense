@@ -33,7 +33,7 @@ public class Shotgun_Bullet : MonoBehaviour
 
         target = _target;
         Debug.Log(target.name);
-        direction = (target.position - transform.position + (Vector3)variation * 0);
+        direction = ((Vector2)target.position - (Vector2)transform.position + variation * 0.1f);
         Debug.Log(direction);
     }
 

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9097569222474257753}
-  - component: {fileID: 3370495255018851026}
   - component: {fileID: 7479155162648620726}
   m_Layer: 0
   m_Name: Other_Actual_Turret
@@ -35,30 +34,6 @@ Transform:
   - {fileID: 1963587009176477064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3370495255018851026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3456540685850026488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db37b4e28dd604d42a7beb4140c24717, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turretRotationPoint: {fileID: 1963587009176477064}
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 64
-  bulletPrefab: {fileID: 698003111455867834, guid: 2030070aad595284a8fad7679ae4eb18, type: 3}
-  firingPoint: {fileID: 3250087700944822577}
-  targetingRange: 5
-  rotationSpeed: 500
-  bps: 3
-  damageMultiplier: 1
-  damageAddition: 0
-  identifier: 1
 --- !u!114 &7479155162648620726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,12 +52,12 @@ MonoBehaviour:
     m_Bits: 0
   bulletPrefab: {fileID: 698003111455867834, guid: 2030070aad595284a8fad7679ae4eb18, type: 3}
   firingPoint: {fileID: 3250087700944822577}
-  targetingRange: 5
-  rotationSpeed: 200
-  bps: 1
+  targetingRange: 3
+  rotationSpeed: 500
+  bps: 0.75
   damageMultiplier: 1
   damageAddition: 0
-  identifier: 0
+  identifier: 1
 --- !u!1 &4300032157145380762
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +84,7 @@ Transform:
   m_GameObject: {fileID: 4300032157145380762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: -0.016727641}
+  m_LocalPosition: {x: 0, y: 0.005, z: -0.016727641}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []

@@ -78,4 +78,15 @@ public class ItemGrabber : MonoBehaviour
             Destroy(item);
         }
     }
+
+    public void StartingItems()
+    {
+        GameObject firstTurret = Instantiate(itemPrefabs[0], spawnPoint.position, Quaternion.identity);
+        firstTurret.transform.SetParent(GameObject.FindGameObjectWithTag("Upgrades").transform, false);
+        itemBoxes.Add(firstTurret);
+
+        GameObject secondTurret = Instantiate(itemPrefabs[1], spawnPoint.position, Quaternion.identity);
+        secondTurret.transform.SetParent(GameObject.FindGameObjectWithTag("Upgrades").transform, false);
+        itemBoxes.Add(secondTurret);
+    }
 }
