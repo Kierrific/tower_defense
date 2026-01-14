@@ -37,6 +37,7 @@ public class Plot : MonoBehaviour
                 {
                     tower.GetComponent<Turret>()?.addMultiplier(2);
                     tower.GetComponent<Shotgun_Turret>()?.addMultiplier(2);
+                    tower.GetComponent<Homing_Turret>()?.addMultiplier(2);
                     BuildManager.main.lowerUpgrades();
                     return;
                 }
@@ -44,6 +45,7 @@ public class Plot : MonoBehaviour
                 {
                     tower.GetComponent<Turret>()?.addBPS(0.1f);
                     tower.GetComponent<Shotgun_Turret>()?.addBPS(0.1f);
+                    tower.GetComponent<Homing_Turret>()?.addBPS(0.1f);
                     BuildManager.main.lowerUpgrades();
                     return;
                 }
@@ -51,12 +53,13 @@ public class Plot : MonoBehaviour
                 {
                     tower.GetComponent<Turret>()?.addDamage(2);
                     tower.GetComponent<Shotgun_Turret>()?.addDamage(2);
+                    tower.GetComponent<Homing_Turret>()?.addDamage(2);
                     BuildManager.main.lowerUpgrades();
                     return;
                 }
                 else if (BuildManager.main.getSelectedTowerIndex() == 1001)
                 {
-                    int id = tower.GetComponent<Turret>()?.getIdentifier() ?? tower.GetComponent<Shotgun_Turret>().getIdentifier();
+                    int id = tower.GetComponent<Turret>()?.getIdentifier() ?? tower.GetComponent<Shotgun_Turret>()?.getIdentifier() ?? tower.GetComponent<Homing_Turret>().getIdentifier();
                     BuildManager.main.setSelectedTower(id);
                     Destroy(tower);
                     BuildManager.main.increaseTower();

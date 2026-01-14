@@ -51,9 +51,9 @@ public class Homing_Turret : MonoBehaviour
     private void Shoot()
     {
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
-        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        Homing_Bullet bulletScript = bulletObj.GetComponent<Homing_Bullet>();
         bulletScript.SetTarget(target);
-        bulletObj.gameObject.GetComponent<Bullet>().damageCalc(damageMultiplier, damageAddition);
+        bulletObj.gameObject.GetComponent<Homing_Bullet>().damageCalc(damageMultiplier, damageAddition);
     }
 
     private void FindTarget()
