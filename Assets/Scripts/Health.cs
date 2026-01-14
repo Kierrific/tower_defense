@@ -9,13 +9,13 @@ public class Health : MonoBehaviour
     [SerializeField] private GameObject particle;
 
     [Header("Attribute")]
-    [SerializeField] private int hitPoints = 2;
+    [SerializeField] private float hitPoints = 2f;
 
     private bool isDestroyed = false;
-    private int holdHP = 2;
+    private float holdHP = 2;
 
     //used in the Bullet script to allow the enemy objects to take damage
-    public void TakeDamage(int dmg)
+    public void TakeDamage(float dmg)
     {
         hitPoints -= dmg;
 
@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void calcHealth(int healthNum)
+    public void calcHealth(float healthNum)
     {
         hitPoints = holdHP + healthNum;
     }

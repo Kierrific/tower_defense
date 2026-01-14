@@ -13,13 +13,14 @@ public class BuildManager : MonoBehaviour
     [SerializeField] private GameObject upgradeCountPrefab;
     [SerializeField] private GameObject deletionTrackerPrefab;
 
-    private int selectedTower = 0;
+    private int selectedReward = 0;
     private int placeableTowers = 0;
     private int usableUpgrades = 0;
     public int tempValue = 0;
     public List<GameObject> towerList = new();
     public List<int> upgradeList = new();
     private int bothStartingGrabbed = 0;
+    private int actualTowerSelect;
 
     public void Start()
     {
@@ -45,13 +46,13 @@ public class BuildManager : MonoBehaviour
 
     public GameObject GetSelectedTower()
     {
-        return main.towerPrefabs[main.selectedTower];
+        return main.towerPrefabs[main.selectedReward];
     }
 
     public void selectReward(int rewardNum)
     {
-        main.selectedTower = rewardNum;
-        if (!(rewardNum == 0) && !(rewardNum == 1) && !(rewardNum == 1001))
+        main.selectedReward = rewardNum;
+        if (!(rewardNum == 0) && !(rewardNum == 1) && !(rewardNum == 2) && !(rewardNum == 1001))
         {
             main.usableUpgrades++;
             upgradeList.Add(rewardNum);
@@ -74,13 +75,13 @@ public class BuildManager : MonoBehaviour
     public void increaseTower()
     {
         main.placeableTowers++;
-        main.towerList.Add(main.towerPrefabs[main.selectedTower]);
+        main.towerList.Add(main.towerPrefabs[main.selectedReward]);
         towerCountPrefab.GetComponent<Text_Updates>().updateText();
     }
 
     public int getSelectedTowerIndex()
     {
-        return main.selectedTower;
+        return main.selectedReward;
     }
     public int getUsableUpgrades()
     {
@@ -96,7 +97,7 @@ public class BuildManager : MonoBehaviour
     {
         if (!EnemySpawner.main.checkItemsSpawned())
         {
-            if (selectedTower != 1001)
+            if (selectedReward != 1001)
             {
                 main.selectReward(1001);
                 deletionTrackerPrefab.GetComponent<Delete_Text_Update>().updateText();
@@ -118,7 +119,7 @@ public class BuildManager : MonoBehaviour
 
     public void setSelectedTower(int num)
     {
-        selectedTower = num;
+        selectedReward = num;
     }
 
     

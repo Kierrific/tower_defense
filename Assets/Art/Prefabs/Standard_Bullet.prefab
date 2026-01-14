@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4734154102173228505}
   - component: {fileID: 8770880423477618486}
   m_Layer: 7
-  m_Name: Bullet
+  m_Name: Standard_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,4 +168,4 @@ MonoBehaviour:
   rb: {fileID: 4734154102173228505}
   turret: {fileID: 5355391616524917774, guid: 0707779b4dc515f44a6f145c0d6c3010, type: 3}
   bulletSpeed: 30
-  bulletDamage: 1
+  bulletDamage: 2

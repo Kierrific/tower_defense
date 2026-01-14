@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9097569222474257753}
   - component: {fileID: 7479155162648620726}
   m_Layer: 0
-  m_Name: Other_Actual_Turret
+  m_Name: Shotgun_Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,8 +84,8 @@ Transform:
   m_GameObject: {fileID: 4300032157145380762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.005, z: -0.016727641}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 0, y: 0.015, z: -0.016727641}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1963587009176477064}
@@ -134,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 1
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 176572214728742925, guid: 76c23546f0d290a4c94054287b667d37, type: 3}
+  m_Sprite: {fileID: 5285808030655182707, guid: 9326e1c64afbc8a49a8c2e96732d9ddf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -221,7 +221,7 @@ SpriteRenderer:
   m_SortingLayerID: 1
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8473821875038635466, guid: 76c23546f0d290a4c94054287b667d37, type: 3}
+  m_Sprite: {fileID: 2912297781628502651, guid: 9326e1c64afbc8a49a8c2e96732d9ddf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -257,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 7267841473873750416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.459, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -288,7 +288,7 @@ Transform:
   m_GameObject: {fileID: 9132828309576294015}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.01663518, z: 0}
+  m_LocalPosition: {x: 0, y: -0.035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

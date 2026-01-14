@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Bullet : MonoBehaviour
+public class Homing_Bullet : MonoBehaviour
 {
     private Transform target;
 
@@ -20,7 +20,6 @@ public class Bullet : MonoBehaviour
     public void SetTarget(Transform _target)
     {
         target = _target;
-        direction = (target.position - transform.position).normalized;
     }
 
     //constantly updates the target and actually moves the bullet for whenever it fires
@@ -30,7 +29,7 @@ public class Bullet : MonoBehaviour
         {
             return;
         }
-        
+        direction = (target.position - transform.position).normalized;
         rb.linearVelocity = direction * bulletSpeed;
     }
 
@@ -54,6 +53,6 @@ public class Bullet : MonoBehaviour
     {
         bulletDamage = baseDamage + Mathf.RoundToInt(addition);
         bulletDamage = Mathf.RoundToInt(bulletDamage * multiplier);
-    } 
+    }
 
 }

@@ -56,6 +56,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 if (spawnedEnemies[i] == null)
                 {
+                    Debug.Log("count check");
                     spawnedEnemies.Remove(spawnedEnemies[i]);
                 }
             }

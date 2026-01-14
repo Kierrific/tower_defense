@@ -78,14 +78,20 @@ public class Shotgun_Turret : MonoBehaviour
 
     private int CheckTargetsInRange()
     {
-        for (int i = 0; i < EnemySpawner.main.GetEnemies().Count; i++)
+        if (EnemySpawner.main.GetEnemies().Count > 0)
         {
-            if (Vector2.Distance(EnemySpawner.main.GetEnemies()[i].transform.position, transform.position) <= targetingRange)
+            for (int i = 0; i < EnemySpawner.main.GetEnemies().Count; i++)
             {
-                return i;
+                if (Vector2.Distance(EnemySpawner.main.GetEnemies()[i].transform.position, transform.position) <= targetingRange)
+                {
+                    return i;
+                }
             }
+            return -1;
         }
+
         return -1;
+        
     }
 
     //checks to see if the targetted enemy is actually in range of the turret

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5179377411336388852}
   - component: {fileID: 5756083268341657690}
   m_Layer: 7
-  m_Name: Other_Bullet
+  m_Name: Shotgun_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,8 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5179377411336388852}
-  turret: {fileID: 0}
-  bulletSpeed: 20
+  bulletSpeed: 10
   bulletDamage: 1
   pelletCount: 8
   laksdfjf: 5

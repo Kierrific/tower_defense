@@ -33,21 +33,21 @@ public class Plot : MonoBehaviour
         {
             if (tower != null || BuildManager.main.getPlaceableTowers() == 0)
             {
-                if (BuildManager.main.getSelectedTowerIndex() == 2 && BuildManager.main.getUsableUpgrades() > 0)
+                if (BuildManager.main.getSelectedTowerIndex() == 3 && BuildManager.main.getUsableUpgrades() > 0)
                 {
                     tower.GetComponent<Turret>()?.addMultiplier(2);
                     tower.GetComponent<Shotgun_Turret>()?.addMultiplier(2);
                     BuildManager.main.lowerUpgrades();
                     return;
                 }
-                else if (BuildManager.main.getSelectedTowerIndex() == 3 && BuildManager.main.getUsableUpgrades() > 0)
+                else if (BuildManager.main.getSelectedTowerIndex() == 4 && BuildManager.main.getUsableUpgrades() > 0)
                 {
                     tower.GetComponent<Turret>()?.addBPS(0.1f);
                     tower.GetComponent<Shotgun_Turret>()?.addBPS(0.1f);
                     BuildManager.main.lowerUpgrades();
                     return;
                 }
-                else if (BuildManager.main.getSelectedTowerIndex() == 4 && BuildManager.main.getUsableUpgrades() > 0)
+                else if (BuildManager.main.getSelectedTowerIndex() == 5 && BuildManager.main.getUsableUpgrades() > 0)
                 {
                     tower.GetComponent<Turret>()?.addDamage(2);
                     tower.GetComponent<Shotgun_Turret>()?.addDamage(2);

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 
-public class Turret : MonoBehaviour
+public class Homing_Turret : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform turretRotationPoint;
@@ -29,7 +29,7 @@ public class Turret : MonoBehaviour
             FindTarget();
             return;
         }
-        
+
 
         RotateTowardsTarget();
 
@@ -69,24 +69,19 @@ public class Turret : MonoBehaviour
             if (CheckTargetsInRange() != -1)
             {
                 target = EnemySpawner.main.GetEnemies()[CheckTargetsInRange()].transform;
-            }            
+            }
         }
     }
 
     private int CheckTargetsInRange()
     {
-        if (EnemySpawner.main.GetEnemies().Count > 0)
+        for (int i = 0; i < EnemySpawner.main.GetEnemies().Count; i++)
         {
-            for (int i = 0; i < EnemySpawner.main.GetEnemies().Count; i++)
+            if (Vector2.Distance(EnemySpawner.main.GetEnemies()[i].transform.position, transform.position) <= targetingRange)
             {
-                if (Vector2.Distance(EnemySpawner.main.GetEnemies()[i].transform.position, transform.position) <= targetingRange)
-                {
-                    return i;
-                }
+                return i;
             }
-            return -1;
         }
-
         return -1;
     }
 

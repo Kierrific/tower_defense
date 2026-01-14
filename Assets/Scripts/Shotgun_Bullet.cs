@@ -8,16 +8,15 @@ public class Shotgun_Bullet : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Turret turret;
 
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 20f;
-    [SerializeField] private int bulletDamage = 1;
+    [SerializeField] private float bulletDamage = 1;
     [SerializeField] public int pelletCount = 8;
 
     private float lifetime = 0f;
     private Vector2 direction;
-    private int baseDamage = 1;
+    private float baseDamage = 1f;
 
     private float _randX;
     private float _randY;
@@ -29,12 +28,9 @@ public class Shotgun_Bullet : MonoBehaviour
         _randY = Random.Range(-laksdfjf, laksdfjf);
 
         Vector2 variation = new Vector2(_randX, _randY);
-        Debug.Log(variation);
 
         target = _target;
-        Debug.Log(target.name);
         direction = ((Vector2)target.position - (Vector2)transform.position + variation * 0.1f);
-        Debug.Log(direction);
     }
 
     //constantly updates the target and actually moves the bullet for whenever it fires
@@ -66,8 +62,8 @@ public class Shotgun_Bullet : MonoBehaviour
 
     public void damageCalc(float multiplier, float addition)
     {
-        bulletDamage = baseDamage + Mathf.RoundToInt(addition);
-        bulletDamage = Mathf.RoundToInt(bulletDamage * multiplier);
+        bulletDamage = baseDamage + addition;
+        bulletDamage = bulletDamage * multiplier;
     }
 
     public int GetPelletCount()

@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: be8323e5c4bb8214bb6db5943165dc2c
+guid: 9326e1c64afbc8a49a8c2e96732d9ddf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4604954230531360714
-    second: basic_turret_fr_0
+      213: 2912297781628502651
+    second: pixil-frame-0 (4)_0
   - first:
-      213: 8565000783535730489
-    second: basic_turret_fr_1
+      213: 5285808030655182707
+    second: pixil-frame-0 (4)_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,19 +100,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: basic_turret_fr_0
+      name: pixil-frame-0 (4)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,19 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 638fe32868ae710c0800000000000000
-      internalID: -4604954230531360714
+      spriteID: b720022076f8a6820800000000000000
+      internalID: 2912297781628502651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: basic_turret_fr_1
+      name: pixil-frame-0 (4)_1
       rect:
         serializedVersion: 2
         x: 100
         y: 0
-        width: 99
+        width: 100
         height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -166,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93fe69355defcd670800000000000000
-      internalID: 8565000783535730489
+      spriteID: 377fb120666fa5940800000000000000
+      internalID: 5285808030655182707
       vertices: []
       indices: 
       edges: []
@@ -176,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c6e1359b6a59dac4e9fb92acef007a25
+    spriteID: 4e6476f1777031a4691950cb2048fe84
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      basic_turret_fr_0: -4604954230531360714
-      basic_turret_fr_1: 8565000783535730489
+      pixil-frame-0 (4)_0: 2912297781628502651
+      pixil-frame-0 (4)_1: 5285808030655182707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -102,6 +102,7 @@ MonoBehaviour:
   itemPrefabs:
   - {fileID: 1738064528673084517, guid: 2b77854061b8d7449af7080c658f445b, type: 3}
   - {fileID: 3908191953547160260, guid: 7c7a3b954b169b74e98ee2fe41f89647, type: 3}
+  - {fileID: 1738064528673084517, guid: 1c46fecf0fd8bbd488a0a5b2a395aca7, type: 3}
   - {fileID: 8084292387641791581, guid: f84d917484b23be4ca02141cbbcff785, type: 3}
   - {fileID: 331622071102420639, guid: dc9b6f8eaedd016429ceaa40925d8079, type: 3}
   - {fileID: 2158867850555858804, guid: b4af5e8f74b994d4fbf76e0671b9f672, type: 3}
@@ -120,6 +121,7 @@ MonoBehaviour:
   towerPrefabs:
   - {fileID: 4191828458962140066, guid: 0707779b4dc515f44a6f145c0d6c3010, type: 3}
   - {fileID: 3456540685850026488, guid: fef75eec6bc997141916f5f1264e83ca, type: 3}
+  - {fileID: 4191828458962140066, guid: 44609b311e2e4144ab8c7b2eb6e59d6f, type: 3}
   upgradePrefabs: []
   towerCountPrefab: {fileID: 5321824795234341263, guid: 96aeb42692cad0249b789bec687e2f38, type: 3}
   upgradeCountPrefab: {fileID: 4869473460976912890, guid: c842d4a4763d5c84ca90201f4d2ce056, type: 3}
