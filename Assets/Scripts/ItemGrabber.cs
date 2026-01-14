@@ -24,10 +24,8 @@ public class ItemGrabber : MonoBehaviour
         for (int i = 1; i < itemPrefabs.Length; i++)
         {
             //I hope I'm doing this right
-            Debug.Log("precheck");
             if (itemPrefabs[itemIndex].gameObject.GetComponent<Item>().getChance() > itemPrefabs[i].gameObject.GetComponent<Item>().getChance() && randomNumber <= itemPrefabs[i].gameObject.GetComponent<Item>().getChance())
             {
-                Debug.Log("randomness check");
                 itemIndex = i;
             }
             

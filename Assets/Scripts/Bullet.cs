@@ -2,36 +2,27 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
-    private Transform target;
+    protected Transform target;
 
     [Header("References")]
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] protected Rigidbody2D rb;
 
     [Header("Attributes")]
-    [SerializeField] private float bulletSpeed = 20f;
-    [SerializeField] private float bulletDamage = 1;
+    [SerializeField] protected float bulletSpeed = 20f;
+    [SerializeField] protected float bulletDamage = 1;
 
-    private float lifetime = 0f;
-    private Vector2 direction;
-    private int baseDamage = 2;
+    protected float lifetime = 0f;
+    protected Vector2 direction;
+    protected int baseDamage = 2;
 
-    public void SetTarget(Transform _target)
+    public abstract void SetTarget(Transform _target);
+
+    public void DamageCalc(float multiplier, float addition)
     {
-        target = _target;
-        direction = (target.position - transform.position).normalized;
-    }
-
-    //constantly updates the target and actually moves the bullet for whenever it fires
-    private void FixedUpdate()
-    {
-        if (!target)
-        {
-            return;
-        }
-        
-        rb.linearVelocity = direction * bulletSpeed;
+        bulletDamage = baseDamage + addition;
+        bulletDamage = bulletDamage * multiplier;
     }
 
     //Allows for the enemies to take damage and destroys the bullet once it happens.
@@ -49,11 +40,4 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void damageCalc(float multiplier, float addition)
-    {
-        bulletDamage = baseDamage + Mathf.RoundToInt(addition);
-        bulletDamage = Mathf.RoundToInt(bulletDamage * multiplier);
-    } 
-
 }

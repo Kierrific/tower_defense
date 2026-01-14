@@ -29439,10 +29439,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Count
       objectReference: {fileID: 0}
-    - target: {fileID: 6379191885261968473, guid: 96aeb42692cad0249b789bec687e2f38, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 7677973570055033467, guid: 96aeb42692cad0249b789bec687e2f38, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -30405,14 +30401,6 @@ PrefabInstance:
     - target: {fileID: 5589748810944369723, guid: c842d4a4763d5c84ca90201f4d2ce056, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705084265419691450, guid: c842d4a4763d5c84ca90201f4d2ce056, type: 3}
-      propertyPath: m_fontSize
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705084265419691450, guid: c842d4a4763d5c84ca90201f4d2ce056, type: 3}
-      propertyPath: m_VerticalAlignment
-      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

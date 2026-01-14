@@ -2,11 +2,12 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Homing_Bullet : Bullet
+public class Basic_Bullet : Bullet
 {
     public override void SetTarget(Transform _target)
     {
         target = _target;
+        direction = (target.position - transform.position).normalized;
     }
 
     //constantly updates the target and actually moves the bullet for whenever it fires
@@ -16,8 +17,7 @@ public class Homing_Bullet : Bullet
         {
             return;
         }
-        direction = (target.position - transform.position).normalized;
+        
         rb.linearVelocity = direction * bulletSpeed;
     }
-
 }

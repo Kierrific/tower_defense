@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 
-public class Homing_Turret : Turret
+public class Basic_Turret : Turret
 {
     private void Update()
     {
@@ -12,7 +12,7 @@ public class Homing_Turret : Turret
             FindTarget();
             return;
         }
-
+        
 
         RotateTowardsTarget();
 
