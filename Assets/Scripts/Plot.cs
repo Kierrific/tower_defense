@@ -5,26 +5,21 @@ using System.Collections.Generic;
 public class Plot : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private Color hoverColor;
+    [SerializeField] private GameObject dimPrefab;
     [SerializeField] private GameObject levelManager;
 
     private GameObject tower;
+    private GameObject dimmer;
     private Color startColor;
-
-    private void Start()
-    {
-        startColor = sr.color;
-    }
 
     private void OnMouseEnter()
     {
-        sr.color = hoverColor;
+        dimmer = Instantiate(dimPrefab, transform.position, Quaternion.identity);
     }
 
     private void OnMouseExit()
     {
-        sr.color = startColor;
+        Destroy(dimmer);
     }
 
     private void OnMouseDown()

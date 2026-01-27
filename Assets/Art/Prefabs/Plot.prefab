@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: sr
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3986366703393257241, guid: e73dda6fbdf4e1e45b4aa1f2bcbcc211, type: 3}
+      propertyPath: dimPrefab
+      value: 
+      objectReference: {fileID: 3498282415529363964, guid: f0485bc836201b04ba6d7f9ef87c1a2b, type: 3}
     - target: {fileID: 4067263869270861511, guid: e73dda6fbdf4e1e45b4aa1f2bcbcc211, type: 3}
       propertyPath: m_Name
-      value: Plot1 Variant
+      value: Plot
       objectReference: {fileID: 0}
     - target: {fileID: 4691050374978772629, guid: e73dda6fbdf4e1e45b4aa1f2bcbcc211, type: 3}
       propertyPath: m_LocalPosition.x
