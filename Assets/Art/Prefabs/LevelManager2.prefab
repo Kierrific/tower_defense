@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3863167167180311755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184193718847351957}
+  - component: {fileID: 5610721068520361521}
+  - component: {fileID: 5697789148537267705}
+  - component: {fileID: 8976178155044472476}
+  - component: {fileID: 4588391606065290171}
+  - component: {fileID: 853156135055383548}
+  m_Layer: 0
+  m_Name: LevelManager2
+  m_TagString: LevelManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &184193718847351957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863167167180311755}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.441026, y: 1.5130881, z: 0.07907117}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5610721068520361521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863167167180311755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0afc8456cf09e4c89602290217e371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {fileID: 6561254769074578611, guid: bbc6fd978e891f24d89e1af1ed113013, type: 3}
+  path:
+  - {fileID: 9009017817632963620, guid: d240a17be13ebe141810e01183aee07d, type: 3}
+  - {fileID: 2275350726508321857, guid: 181e9a5a35995be4bb47794feb37bf8e, type: 3}
+  - {fileID: 5954853652030515406, guid: aee77240395ccd44fa09edbb3351f6af, type: 3}
+  - {fileID: 6117556742127156136, guid: 410aee0c0bb5a0a4f8c52dd6930a7158, type: 3}
+  - {fileID: 7947594447736623383, guid: 3ec7e8cb3bdac0c4b9751660b838fd16, type: 3}
+  - {fileID: 4581916467494651980, guid: 79d7af817449b0a41833f1672ac8a6ac, type: 3}
+  - {fileID: 3214932295404253578, guid: 79962f8f60b05ec4482f56ebfd092334, type: 3}
+  - {fileID: 4636928669017839077, guid: ca96a73d5aa1dbb4f8c41540ab651687, type: 3}
+  - {fileID: 296612727308885233, guid: d2f6db4534a87d54f91cab15f388352a, type: 3}
+  - {fileID: 1706749664260195262, guid: 34f74371b92d02c409d9f99b690d17b5, type: 3}
+  - {fileID: 7020409526240857308, guid: 542b5d984ab39424da8cf6cf447aa365, type: 3}
+  - {fileID: 6483401269278706358, guid: 3ed7259777a4ae242ad5ecd33ef66479, type: 3}
+  - {fileID: 796882610690914544, guid: e49ae29b00bca264cbbe36f1cf5b313b, type: 3}
+  - {fileID: 603375444553243350, guid: e16683c96f262eb4d8b37f467e4ea201, type: 3}
+  - {fileID: 6161856920551400105, guid: 1db73381ba0fcfe44a5e238c86ad76ef, type: 3}
+--- !u!114 &5697789148537267705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863167167180311755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62091318774710143bff6bb12c77ff5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 1224698147363467012, guid: 1ca5e87510605b543bc3e1d72f8bcf9b, type: 3}
+  levelManager: {fileID: 3863167167180311755}
+  baseEnemies: 8
+  enemiesPerSecond: 2
+  difficultyScalingFactor: 0.5
+  spawnedEnemies: []
+--- !u!114 &8976178155044472476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863167167180311755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f404f6a9c786fd64cb265c9ae1626a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 7352481368732494581, guid: ace266c34b34f2643a5a5238d81e413c, type: 3}
+  itemPrefabs:
+  - {fileID: 1738064528673084517, guid: 2b77854061b8d7449af7080c658f445b, type: 3}
+  - {fileID: 3908191953547160260, guid: 7c7a3b954b169b74e98ee2fe41f89647, type: 3}
+  - {fileID: 1738064528673084517, guid: 1c46fecf0fd8bbd488a0a5b2a395aca7, type: 3}
+  - {fileID: 8084292387641791581, guid: f84d917484b23be4ca02141cbbcff785, type: 3}
+  - {fileID: 331622071102420639, guid: dc9b6f8eaedd016429ceaa40925d8079, type: 3}
+  - {fileID: 2158867850555858804, guid: b4af5e8f74b994d4fbf76e0671b9f672, type: 3}
+--- !u!114 &4588391606065290171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863167167180311755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45be33227a3e5646a4bd82f595ba88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefabs:
+  - {fileID: 4191828458962140066, guid: 0707779b4dc515f44a6f145c0d6c3010, type: 3}
+  - {fileID: 3456540685850026488, guid: fef75eec6bc997141916f5f1264e83ca, type: 3}
+  - {fileID: 4191828458962140066, guid: 44609b311e2e4144ab8c7b2eb6e59d6f, type: 3}
+  upgradePrefabs: []
+  towerCountPrefab: {fileID: 5321824795234341263, guid: 96aeb42692cad0249b789bec687e2f38, type: 3}
+  upgradeCountPrefab: {fileID: 4869473460976912890, guid: c842d4a4763d5c84ca90201f4d2ce056, type: 3}
+  deletionTrackerPrefab: {fileID: 3516638822716023217, guid: 037a9b82ee5e07f4a93cc73f72b33bee, type: 3}
+  tempValue: 0
+  towerList: []
+  upgradeList: 
+--- !u!114 &853156135055383548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863167167180311755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422d0c8c96578e04ca744603cab6d0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 1224698147363467012, guid: 1ca5e87510605b543bc3e1d72f8bcf9b, type: 3}
+  health_counter_prefab: {fileID: 1357037158401120067, guid: 626fd468a8437034b9e03ed0dbb9288c, type: 3}
+  health: 20

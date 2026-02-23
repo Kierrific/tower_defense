@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: b6fae8f9bf484934883b37563f0eac68
   - enabled: 1
+    path: Assets/Scenes/MapSelection.unity
+    guid: 88358a6a6e7f0e0438fb5ce90d0e262d
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Map2.unity
+    guid: 2ad5c9f0a02a6ee41b714459f00c2004
   - enabled: 1
     path: Assets/Scenes/Game_Over.unity
     guid: 200a547962b5256478aff0a522361532

@@ -5,7 +5,7 @@ public class StartButton : MonoBehaviour
 {
     public void startButton()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("MapSelection");
     }
     
     public void quitButton()
@@ -16,5 +16,20 @@ public class StartButton : MonoBehaviour
     public void menuButton()
     {
         SceneManager.LoadScene("Title");
+    }
+
+    public void TutorialButton()
+    {
+        //SceneManager.LoadScene("Tutorial");
+    }
+
+    public void PlainsButton()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    
+    public void DesertButton()
+    {
+        SceneManager.LoadScene("Map2");
     }
 }
