@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
@@ -9,9 +11,8 @@ public class BuildManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject[] towerPrefabs;
     [SerializeField] private GameObject[] upgradePrefabs;
-    [SerializeField] private GameObject towerCountPrefab;
-    [SerializeField] private GameObject upgradeCountPrefab;
     [SerializeField] private GameObject deletionTrackerPrefab;
+    [SerializeField] private Image upgradeImage;
 
     private int selectedReward = 0;
     private int placeableTowers = 0;
@@ -21,6 +22,8 @@ public class BuildManager : MonoBehaviour
     public List<int> upgradeList = new();
     private int bothStartingGrabbed = 0;
     private int actualTowerSelect;
+    private int currentUpgradeSelected;
+    private int lastUpgradeSelected;
 
     public void Start()
     {
@@ -55,8 +58,8 @@ public class BuildManager : MonoBehaviour
         if (!(rewardNum == 0) && !(rewardNum == 1) && !(rewardNum == 2) && !(rewardNum == 1001))
         {
             main.usableUpgrades++;
-            upgradeList.Add(rewardNum);
-            upgradeCountPrefab.GetComponent<Upgrade_Updates>().updateText();
+            currentUpgradeSelected = rewardNum;
+            main.upgradeList.Add(rewardNum);
         }
     }
 
@@ -69,14 +72,12 @@ public class BuildManager : MonoBehaviour
     {
         main.placeableTowers--;
         main.towerList.Remove(main.towerList[^1]);
-        towerCountPrefab.GetComponent<Text_Updates>().updateText();
     }
 
     public void increaseTower()
     {
         main.placeableTowers++;
         main.towerList.Add(main.towerPrefabs[main.selectedReward]);
-        towerCountPrefab.GetComponent<Text_Updates>().updateText();
     }
 
     public int getSelectedTowerIndex()
@@ -90,7 +91,6 @@ public class BuildManager : MonoBehaviour
     public void lowerUpgrades()
     {
         main.usableUpgrades--;
-        upgradeCountPrefab.GetComponent<Upgrade_Updates>().updateText();
     }
 
     public void destroySelect()
@@ -120,6 +120,37 @@ public class BuildManager : MonoBehaviour
     public void setSelectedTower(int num)
     {
         selectedReward = num;
+    }
+
+    public void UseUpgrade()
+    {
+
+    }
+
+    public void SwitchUpgrade(InputAction.CallbackContext ctx)
+    {
+        if (!ctx.performed)
+        { return; }
+
+        bool changedUpgrade = false;
+        if (main.upgradeList.Count > 1)
+        {
+            for (int i = 0; i < main.upgradeList.Count; i++)
+            {
+                if (main.upgradeList[i] != currentUpgradeSelected && !changedUpgrade && main.upgradeList[i] != lastUpgradeSelected)
+                {
+                    lastUpgradeSelected = currentUpgradeSelected;
+                    currentUpgradeSelected = main.upgradeList[i];
+                    changedUpgrade = true;
+
+                    if (currentUpgradeSelected == 3)
+                    {
+
+                    }
+                }
+            }
+        }
+
     }
 
     
