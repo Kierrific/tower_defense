@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class BuildManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BuildManager : MonoBehaviour
     [SerializeField] private GameObject[] upgradePrefabs;
     [SerializeField] private GameObject deletionTrackerPrefab;
     [SerializeField] private Image upgradeImage;
+    [SerializeField] private Image[] u_images;
 
     private int selectedReward = 0;
     private int placeableTowers = 0;
@@ -58,7 +60,7 @@ public class BuildManager : MonoBehaviour
         if (!(rewardNum == 0) && !(rewardNum == 1) && !(rewardNum == 2) && !(rewardNum == 1001))
         {
             main.usableUpgrades++;
-            currentUpgradeSelected = rewardNum;
+            main.currentUpgradeSelected = rewardNum;
             main.upgradeList.Add(rewardNum);
         }
     }
@@ -122,9 +124,54 @@ public class BuildManager : MonoBehaviour
         selectedReward = num;
     }
 
-    public void UseUpgrade()
+    public void UseUpgrade(GameObject tower)
     {
-
+        bool removeCheck = false;
+        if (main.currentUpgradeSelected == 3 && main.getUsableUpgrades() > 0)
+        {
+            tower.GetComponent<Turret>().addMultiplier(2);
+            main.lowerUpgrades();
+            for (int i = 0; i < upgradeList.Count; i++)
+            {
+                if (currentUpgradeSelected == upgradeList[i] && !removeCheck)
+                {
+                    upgradeList.Remove(upgradeList[i]);
+                    removeCheck = true;
+                    main.SetUpgradeSelect();
+                }
+            }
+            return;
+        }
+        else if (main.currentUpgradeSelected == 4 && main.getUsableUpgrades() > 0)
+        {
+            tower.GetComponent<Turret>().addBPS(0.1f);
+            main.lowerUpgrades();
+            for (int i = 0; i < upgradeList.Count; i++)
+            {
+                if (currentUpgradeSelected == upgradeList[i] && !removeCheck)
+                {
+                    upgradeList.Remove(upgradeList[i]);
+                    removeCheck = true;
+                    main.SetUpgradeSelect();
+                }
+            }
+            return;
+        }
+        else if (main.currentUpgradeSelected == 5 && main.getUsableUpgrades() > 0)
+        {
+            tower.GetComponent<Turret>().addDamage(2);
+            main.lowerUpgrades();
+            for (int i = 0; i < upgradeList.Count; i++)
+            {
+                if (currentUpgradeSelected == upgradeList[i] && !removeCheck)
+                {
+                    upgradeList.Remove(upgradeList[i]);
+                    removeCheck = true;
+                    main.SetUpgradeSelect();
+                }
+            }
+            return;
+        }
     }
 
     public void SwitchUpgrade(InputAction.CallbackContext ctx)
@@ -132,6 +179,12 @@ public class BuildManager : MonoBehaviour
         if (!ctx.performed)
         { return; }
 
+        main.SetUpgradeSelect();
+
+    }
+
+    public void SetUpgradeSelect()
+    {
         bool changedUpgrade = false;
         if (main.upgradeList.Count > 1)
         {
@@ -145,12 +198,41 @@ public class BuildManager : MonoBehaviour
 
                     if (currentUpgradeSelected == 3)
                     {
-
+                        main.upgradeImage.sprite = u_images[0].sprite;
+                    }
+                    else if (currentUpgradeSelected == 4)
+                    {
+                        main.upgradeImage.sprite = u_images[1].sprite;
+                    }
+                    else if (currentUpgradeSelected == 5)
+                    {
+                        main.upgradeImage.sprite = u_images[2].sprite;
                     }
                 }
             }
         }
+        else if (main.upgradeList.Count == 1)
+        {
+            currentUpgradeSelected = main.upgradeList[0];
 
+            if (currentUpgradeSelected == 3)
+            {
+                main.upgradeImage.sprite = u_images[0].sprite;
+            }
+            else if (currentUpgradeSelected == 4)
+            {
+                main.upgradeImage.sprite = u_images[1].sprite;
+            }
+            else if (currentUpgradeSelected == 5)
+            {
+                main.upgradeImage.sprite = u_images[2].sprite;
+            }
+        }
+        else if (main.upgradeList.Count == 0)
+        {
+            currentUpgradeSelected = 0;
+            main.upgradeImage.sprite = upgradeImage.sprite;
+        }
     }
 
     

@@ -124,6 +124,11 @@ MonoBehaviour:
   - {fileID: 4191828458962140066, guid: 44609b311e2e4144ab8c7b2eb6e59d6f, type: 3}
   upgradePrefabs: []
   deletionTrackerPrefab: {fileID: 3516638822716023217, guid: 037a9b82ee5e07f4a93cc73f72b33bee, type: 3}
+  upgradeImage: {fileID: 3105122819334731638, guid: 042005d3c68dcfc4199b330d590e247e, type: 3}
+  u_images:
+  - {fileID: 8495168905831687683, guid: c6b25a01f83fa8c4c87ae404f14b2c3e, type: 3}
+  - {fileID: 8178803673908976694, guid: 6cbc15a3f700b644bb6604f80a6bef9a, type: 3}
+  - {fileID: 6773935886842174954, guid: 1f6357d2ee1f6c342a054e94dabbb77c, type: 3}
   tempValue: 0
   towerList: []
   upgradeList: 
